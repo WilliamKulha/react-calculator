@@ -4,7 +4,7 @@ import Display from 'components/calculator/Display';
 import Clear from 'components/calculator/Clear';
 import Numbers from 'components/calculator/Numbers';
 import Operators from 'components/calculator/Operators';
-import styles from './styles/calculator-style.scss';
+import styles from './styles/calculator.scss'
 
 class Calculator extends Component {
   constructor(props) {

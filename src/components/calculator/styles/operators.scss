@@ -1,0 +1,12 @@
+.operators-wrapper {
+  width: 50px;
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.operator-button {
+  background-color: #F81894;
+  color: white;
+  border: 1px solid #aaaaaa;
+}

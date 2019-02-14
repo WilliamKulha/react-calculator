@@ -20,6 +20,22 @@ class Calculator extends Component {
     this.setState({calculation: []})
   }
 
+  handleNumberClick = (e) => {
+    let tempState = this.state.calculation.slice();
+    let newNumber = e.target.value;
+    tempState.push(newNumber);
+    this.setState({calculation: tempState});  
+    console.log(this.state.calculation);  
+  }
+
+  handleOperatorClick = (e) => {
+    let tempState = this.state.calculation.slice();
+    let newOperator = e.target.value;
+    tempState.push(newOperator);
+    this.setState({calculation: tempState});
+    console.log(this.state.calculation);
+  }
+
   render() {
     return(
       <div>
@@ -30,10 +46,10 @@ class Calculator extends Component {
           handleClick={this.handleClearClick}
         />
         <Numbers 
-
+        handleClick={this.handleNumberClick}
         />
         <Operators 
-        
+        handleClick={this.handleOperatorClick}        
         />
       </div>
     )

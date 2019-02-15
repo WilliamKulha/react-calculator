@@ -32,15 +32,41 @@ class Calculator extends Component {
   handleOperatorClick = (e) => {
     let tempState = this.state.calculation.slice();
     let newOperator = e.target.value;
-    if(newOperator == '=') {
-      console.log(this.state)
-      let evaluated = [math.eval(this.state.calculation.join(''))]
-      this.setState({calculation: evaluated});
+    if(newOperator === '=') { 
+      try {
+        let evaluated = [math.eval(this.state.calculation.join(''))]
+        this.setState({calculation: evaluated});
+      }
+      catch(e) {
+        this.setState({calculation: ['ERROR']});
+      }
     } else {
       tempState.push(newOperator);
       this.setState({calculation: tempState});
       console.log(this.state.calculation);
     }
+  }
+
+  handleKeyPress = (e) => {
+    let tempState = this.state.calculation.slice();
+    let newValue = String.fromCharCode(e.keyCode);
+    if(newValue === '=') { 
+      try {
+        let evaluated = [math.eval(this.state.calculation.join(''))]
+        this.setState({calculation: evaluated});
+      }
+      catch(e) {
+        this.setState({calculation: ['ERROR']});
+      }
+    } else {
+      tempState.push(newValue);
+      this.setState({calculation: tempState});
+      console.log(this.state.calculation);
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('keypress', this.handleKeyPress);
   }
 
   render() {

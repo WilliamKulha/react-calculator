@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 html, body {
+  max-width: 200px;
   font-family: 'Orbitron', sans-serif;
+}
+
+#react-app-root {
+  max-width: 200px;
+  width: 200px;
 }

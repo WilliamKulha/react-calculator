@@ -17,7 +17,7 @@ The display component has a fixed width of 200px, however, if a large number is 
 Create React App\
 CSSModules\
 NodeSass\
-Math.js\
+Math.js
 
 ## License 
 Copyright 2019 William Kulha

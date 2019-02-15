@@ -3,10 +3,15 @@
   height: 200px;
   display: flex;
   flex-flow: column nowrap;
+  grid-row: 2/6;
+  grid-column: 4/5;
 }
 
 .operator-button {
   background-color: #F81894;
   color: white;
   border: 1px solid #aaaaaa;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
 }

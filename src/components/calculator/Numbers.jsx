@@ -6,14 +6,17 @@ import styles from './styles/numbers-container.scss';
 class Numbers extends Component {
 
   createButtons = () => {
+    let numberCarrier = []
     for(let i = 1; i <= 9; i ++) {
-      return(
+      numberCarrier.push(
       <NumberButton 
+        key={i}
         buttonValue = {i}
         handleClick = {this.props.handleClick}
       />
       )
     }
+    return numberCarrier;
   }
 
   render() {

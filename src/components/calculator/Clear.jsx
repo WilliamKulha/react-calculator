@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './styles/clear.scss';
 
-export default class Clear extends Component{
+class Clear extends Component{
 
   render() {
     return (
-        <button onClick={this.props.handleClick}>Clear</button>
+        <button 
+        className="clear"
+        onClick={this.props.handleClick}>
+        Clear
+        </button>
     )
   }
 }
+
+export default CSSModules(Clear, styles);
 

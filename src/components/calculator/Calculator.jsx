@@ -4,7 +4,9 @@ import Display from 'components/calculator/Display';
 import Clear from 'components/calculator/Clear';
 import Numbers from 'components/calculator/Numbers';
 import Operators from 'components/calculator/Operators';
-import styles from './styles/calculator.scss'
+import styles from './styles/calculator.scss';
+import math from 'mathjs';
+
 
 class Calculator extends Component {
   constructor(props) {
@@ -12,7 +14,6 @@ class Calculator extends Component {
     
     this.state = {
       calculation: [],
-      currentDisplay: ''
     }
   }
 
@@ -31,25 +32,31 @@ class Calculator extends Component {
   handleOperatorClick = (e) => {
     let tempState = this.state.calculation.slice();
     let newOperator = e.target.value;
-    tempState.push(newOperator);
-    this.setState({calculation: tempState});
-    console.log(this.state.calculation);
+    if(newOperator == '=') {
+      console.log(this.state)
+      let evaluated = [math.eval(this.state.calculation.join(''))]
+      this.setState({calculation: evaluated});
+    } else {
+      tempState.push(newOperator);
+      this.setState({calculation: tempState});
+      console.log(this.state.calculation);
+    }
   }
 
   render() {
     return(
-      <div>
+      <div className="calculator">
         <Display 
-          display={this.state.currentDisplay}
+          display={this.state.calculation}
         />
         <Clear 
           handleClick={this.handleClearClick}
         />
         <Numbers 
-        handleClick={this.handleNumberClick}
+          handleClick={this.handleNumberClick}
         />
         <Operators 
-        handleClick={this.handleOperatorClick}        
+          handleClick={this.handleOperatorClick}        
         />
       </div>
     )

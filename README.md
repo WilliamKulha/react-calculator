@@ -6,8 +6,8 @@ A project built for React practice.
 
 ## Getting up and running on your machine
 
-Open your terminal and run the command `git clone https://github.com/WilliamKulha/react-calculator.git`
-Once the repo has been cloned, run `npm i` to install dependencies.
+Open your terminal and run the command `git clone https://github.com/WilliamKulha/react-calculator.git`\
+Once the repo has been cloned, run `npm i` to install dependencies\
 Once everything is installed, run `npm start` to begin running the project @ localhost:3000.
 
 ## 🐛Known Bugs🐛
